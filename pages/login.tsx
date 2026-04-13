@@ -8,6 +8,7 @@ export default function Login() {
 
   const handleLogin = async () => {
     try {
+      console.log('Logging in user...');
       const { error } = await supabase.auth.signInWithPassword({
         email,
         password,
@@ -17,6 +18,7 @@ export default function Login() {
         console.error('Error logging in:', error);
         // Show error message
       } else {
+        console.log('User logged in successfully!');
         // Redirect to home page or show success message
       }
     } catch (error) {
