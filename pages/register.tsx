@@ -9,17 +9,19 @@ export default function Register() {
   const [password, setPassword] = useState('');
 
   const handleRegister = async () => {
-    try {
-      const user = await register(email, password);
+  try {
+    console.log('Registering user...');
+    const user = await register(email, password);
 
-      if (user) {
-        // Redirect to home page or show success message
-      }
-    } catch (error) {
-      console.error('Error registering:', error);
-      // Show error message
+    if (user) {
+      console.log('User registered successfully!');
+      // Redirect to home page or show success message
     }
-  };
+  } catch (error) {
+    console.error('Error registering:', error);
+    // Show error message
+  }
+};
 
   return (
     <div>
